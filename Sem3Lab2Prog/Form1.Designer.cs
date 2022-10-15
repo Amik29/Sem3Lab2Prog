@@ -176,6 +176,8 @@
             this.panel1.Size = new System.Drawing.Size(800, 344);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
+            this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MouseDoubleClick);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
             // 
             // MyForm
             // 
