@@ -13,7 +13,7 @@ namespace Sem3Lab2Prog
 
 
 
-        Ellipse() : base(){
+        public Ellipse() : base(){
             a = 80;
             b = 60;
         }

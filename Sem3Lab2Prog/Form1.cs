@@ -18,7 +18,7 @@ namespace Sem3Lab2Prog
         private void MouseDown(object sender, MouseEventArgs e)
         {
             if (elements.Count > 0) {
-                for (int i = 0; i >= 0; i--)
+                for (int i = 0; i < elements.Count ; i++)
                 {
                     if (elements[i].ContainsPoint(e.Location)) id = i;
                     elements[i].Selected = false;
@@ -34,16 +34,34 @@ namespace Sem3Lab2Prog
         }
         private void MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
-            try
-            {
-                go.X = e.X;
-                go.Y = e.Y;
-                elements.Add(go);
-                Refresh();
-            }
-            catch (ArgumentException) { MessageBox.Show("Выход за границу"); }
+            if (random.Next(0, 2) == 1) typefigure = "Rect";
+            else typefigure = "Circle";
 
+            if (typefigure== "Rect")
+            {
+                Rectangle go = new Rectangle();
+                try
+                {
+                    go.X = e.X;
+                    go.Y = e.Y;
+                }
+                catch (ArgumentException ex) { MessageBox.Show("Выход за границу"); }
+                elements.Add(go);
+            }
+            else
+            {
+                Ellipse go = new Ellipse();
+                try
+                {
+                    go.X = e.X;
+                    go.Y = e.Y;
+
+                }
+                catch (ArgumentException ex) { MessageBox.Show("Выход за границу"); }
+                elements.Add(go);
+            }
+
+            panel1.Invalidate();
 
         }
         private void PaintPanel(object sender, PaintEventArgs e)
@@ -61,13 +79,23 @@ namespace Sem3Lab2Prog
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            elements.Add(new GraphObject()); 
+            if (typefigure == "Rect")
+            {
+                Rectangle go = new Rectangle();
+                elements.Add(go);
+            }
+            else
+            {
+                Ellipse go = new Ellipse();
+                elements.Add(go);
+            }
+           
             panel1.Invalidate();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            elements.Clear();
         }
     }
 }
