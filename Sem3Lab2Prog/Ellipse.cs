@@ -27,9 +27,16 @@ namespace Sem3Lab2Prog
 
        override public bool ContainsPoint(Point p)
         {
-            float Cx = a / 2.0f;
-            float Cy = b / 2.0f;
-            return ((((p.X - Cx) * (p.X + Cx)) / (a * a) - (p.Y - Cy) * (p.Y + Cy) / (b * b)) <= 1);
+            float halfA = a / 2.0f;
+            float halfB = b / 2.0f;
+            float centerX = x + halfA;
+            float centerY = y + halfB;
+            double dx = Math.Pow(p.X - centerX,2);
+            double dy = Math.Pow(p.Y - centerY, 2);
+
+
+
+            return ((dx / (halfA * halfA) + (dy / (halfB * halfB))) <= 1);
         }
     }
 }

@@ -13,8 +13,8 @@ namespace Sem3Lab2Prog
 
 
         protected Color c;
-        protected int x;
-        protected int y;
+        protected float x;
+        protected float y;
 
         static Size MaxSize
         {
@@ -28,7 +28,7 @@ namespace Sem3Lab2Prog
             }
         }
 
-        public int X
+        public float X
         {
             get { return x; }
             set
@@ -37,7 +37,7 @@ namespace Sem3Lab2Prog
                 else { x = value; }
             }
         }
-        public int Y
+        public float Y
         {
             get { return y; }
             set
