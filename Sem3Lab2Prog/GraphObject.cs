@@ -16,24 +16,51 @@ namespace Sem3Lab2Prog
         protected float x;
         protected float y;
 
-        static Size MaxSize
+        protected int w;
+        protected int h;
+
+        public int H
         {
-            get
-            {
-                return MaxSize;
-            }
+            get { return h; }
             set
             {
-                if (value.Width > MaxSize.Width) { throw new ArgumentException(""); }
+                if (value + y >= MaxSize.Height)
+                {
+                    throw new ArgumentException("Не влезает");
+                }
+                else
+                {
+                    h = value;
+                }
             }
         }
+        public int W
+        {
+            get { return w; }
+            set
+            {
+                if (value + x > MaxSize.Width)
+                {
+                    throw new ArgumentException("Не влезает!");
+                }
+                else
+                {
+                    w = value;
+                }
+            }
+        }
+
+
+
+        public static Size MaxSize { get; set; }
+
 
         public float X
         {
             get { return x; }
             set
             {
-                if (value < 0) { throw new ArgumentException("x<0!"); }
+                if (value+w >= MaxSize.Width) { throw new ArgumentException("x<0!"); }
                 else { x = value; }
             }
         }
@@ -42,7 +69,7 @@ namespace Sem3Lab2Prog
             get { return y; }
             set
             {
-                if (value < 0) { throw new ArgumentException("y<0!"); }
+                if (value+h >= MaxSize.Height) { throw new ArgumentException("y<0!"); }
                 else { y = value; }
             }
         }

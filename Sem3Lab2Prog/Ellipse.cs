@@ -8,27 +8,24 @@ namespace Sem3Lab2Prog
 {
     internal class Ellipse : GraphObject
     {
-        float a;
-        float b;
-
 
 
         public Ellipse() : base(){
-            a = 80;
-            b = 60;
+            w = 80;
+            h = 60;
         }
 
         override public void Draw(Graphics G)
         {
-            G.FillEllipse(brush, x, y, a, b);
-            if (Selected) G.DrawEllipse(Pens.Red, x, y, a, b);
-            else G.DrawEllipse(Pens.Blue, x, y, a, b);
+            G.FillEllipse(brush, x, y, w, h);
+            if (Selected) G.DrawEllipse(Pens.Red, x, y, w, h);
+            else G.DrawEllipse(Pens.Blue, x, y, w, h);
         }
 
        override public bool ContainsPoint(Point p)
         {
-            float halfA = a / 2.0f;
-            float halfB = b / 2.0f;
+            float halfA = w / 2.0f;
+            float halfB = h / 2.0f;
             float centerX = x + halfA;
             float centerY = y + halfB;
             double dx = Math.Pow(p.X - centerX,2);

@@ -25,7 +25,7 @@ namespace Sem3Lab2Prog
             if (random.Next(0, 2) == 1) typefigure = "Rect";
             else typefigure = "Circle";             
             InitializeComponent();
-
+            GraphObject.MaxSize = panel1.ClientSize;
         }
 
         private void MouseDown(object sender, MouseEventArgs e)

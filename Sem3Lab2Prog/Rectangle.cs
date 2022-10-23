@@ -8,40 +8,6 @@ namespace Sem3Lab2Prog
 {
     internal class Rectangle : GraphObject
     {
-        protected int w;
-        protected int h;
-
-        public int H
-        {
-            get { return h; }
-            set
-            {
-                if (value < 0) 
-                { 
-                    throw new ArgumentException("h<0!");
-                }
-                else 
-                {
-                    h = value; 
-                }
-            }
-        }
-        public int W
-        {
-            get { return w; }
-            set
-            {
-                if (value < 0) 
-                { 
-                    throw new ArgumentException("w<0!");
-                }
-                else 
-                { 
-                    w = value;
-                }
-            }
-        }
-
 
         public override void Draw(Graphics G)
         {

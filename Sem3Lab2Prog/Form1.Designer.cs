@@ -214,6 +214,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ContextMenuStrip = this.contextMenuStrip1;
             this.panel1.Location = new System.Drawing.Point(0, 81);
@@ -251,6 +254,12 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void MyForm_Resize(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            GraphObject.MaxSize = control.Size;
         }
 
         #endregion
