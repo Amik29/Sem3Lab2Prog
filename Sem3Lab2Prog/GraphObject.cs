@@ -19,37 +19,6 @@ namespace Sem3Lab2Prog
         protected int w;
         protected int h;
 
-        public int H
-        {
-            get { return h; }
-            set
-            {
-                if (value + y >= MaxSize.Height)
-                {
-                    throw new ArgumentException("Не влезает");
-                }
-                else
-                {
-                    h = value;
-                }
-            }
-        }
-        public int W
-        {
-            get { return w; }
-            set
-            {
-                if (value + x > MaxSize.Width)
-                {
-                    throw new ArgumentException("Не влезает!");
-                }
-                else
-                {
-                    w = value;
-                }
-            }
-        }
-
 
 
         public static Size MaxSize { get; set; }

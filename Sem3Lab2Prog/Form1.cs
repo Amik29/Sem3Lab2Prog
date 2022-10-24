@@ -228,5 +228,9 @@ namespace Sem3Lab2Prog
             k++;
         }
 
+        private void panel1_SizeChanged(object sender, EventArgs e)
+        {
+            MyForm_Resize(sender,e);
+        }
     }
 }

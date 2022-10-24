@@ -223,6 +223,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 344);
             this.panel1.TabIndex = 3;
+            this.panel1.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
             this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MouseDoubleClick);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
